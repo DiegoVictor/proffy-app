@@ -11,6 +11,12 @@ export const TopBar = styled.View`
   justify-content: space-between;
 `;
 
+export const Header = styled.View`
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
 export const Title = styled.Text`
   color: #fff;
   font-family: 'Archivo_700Bold';
