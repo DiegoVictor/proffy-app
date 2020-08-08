@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { TextInputProps } from 'react-native';
 import { useField } from '@unform/core';
 
-import { TextInput } from './styles';
+import { TextInput, Error } from './styles';
 
 interface InputProps extends TextInputProps {
   name: string;
@@ -11,7 +11,7 @@ interface InputProps extends TextInputProps {
 const Input: React.FC<InputProps> = ({ name, ...rest }) => {
   const inputRef = useRef<any>(null);
 
-  const { fieldName, registerField, defaultValue } = useField(name);
+  const { fieldName, registerField, defaultValue, error } = useField(name);
 
   useEffect(() => {
     inputRef.current.value = defaultValue;
@@ -36,18 +36,21 @@ const Input: React.FC<InputProps> = ({ name, ...rest }) => {
   }, [fieldName, registerField]);
 
   return (
-    <TextInput
-      ref={inputRef}
-      keyboardAppearance="dark"
-      defaultValue={defaultValue}
-      placeholderTextColor="#c1bccc"
-      onChangeText={value => {
-        if (inputRef.current) {
-          inputRef.current.value = value;
-        }
-      }}
-      {...rest}
-    />
+    <>
+      <TextInput
+        ref={inputRef}
+        keyboardAppearance="dark"
+        defaultValue={defaultValue}
+        placeholderTextColor="#c1bccc"
+        onChangeText={value => {
+          if (inputRef.current) {
+            inputRef.current.value = value;
+          }
+        }}
+        {...rest}
+      />
+      {error && <Error>{error}</Error>}
+    </>
   );
 };
 

@@ -9,3 +9,9 @@ export const TextInput = styled.TextInput`
   margin-top: 4px;
   padding: 0px 16px;
 `;
+
+export const Error = styled.Text`
+  color: #ee0000;
+  margin-bottom: 15px;
+  margin-top: -15px;
+`;
