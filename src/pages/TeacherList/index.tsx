@@ -4,12 +4,15 @@ import { Alert } from 'react-native';
 import { BorderlessButton } from 'react-native-gesture-handler';
 import AsyncStorage from '@react-native-community/async-storage';
 import { FormHandles } from '@unform/core';
+import * as Yup from 'yup';
+import { useFocusEffect } from '@react-navigation/native';
 
 import PageHeader from '../../components/PageHeader';
 import TeacherItem from '../../components/TeacherItem';
 import Input from '../../components/Input';
 import api from '../../services/api';
 import { Teacher } from '../../components/TeacherItem';
+import getValidationErrors from '../../utils/getValidationErrors';
 import {
   Container,
   List,
@@ -20,7 +23,6 @@ import {
   SubmitButton,
   SubmitButtonText,
 } from './styles';
-import { useFocusEffect } from '@react-navigation/native';
 
 const TeacherList: React.FC = () => {
   const [teachers, setTeachers] = useState<Teacher[]>([]);
@@ -34,19 +36,37 @@ const TeacherList: React.FC = () => {
 
   const handleSubmit = useCallback(async ({ subject, week_day, time }) => {
     try {
-      const { data } = await api.get<Teacher[]>('classes', {
-        params: {
-          subject: subject.trim(),
-          week_day: week_day.trim(),
-          time: time.trim(),
-        },
+      const schema = Yup.object().shape({
+        subject: Yup.string().required('Este campo é obrigatório'),
+        week_day: Yup.string().required('Este campo é obrigatório'),
+        time: Yup.string().required('Este campo é obrigatório'),
       });
 
-      setTeachers(data);
+      const data = {
+        subject: subject,
+        week_day: week_day,
+        time: time,
+      };
+
+      await schema.validate(data, { abortEarly: false });
+
+      const response = await api.get<Teacher[]>('classes', {
+        params: data,
+      });
+
+      setTeachers(response.data);
       setIsfiltersVisible(false);
       loadFavorites();
     } catch (err) {
-      Alert.alert('Ops! Alguma coisa deu errado, tente mais tarde!');
+      console.log(err);
+
+      if (err instanceof Yup.ValidationError) {
+        const errors = getValidationErrors(err);
+
+        formRef.current?.setErrors(errors);
+      } else {
+        Alert.alert('Ops! Alguma coisa deu errado, tente mais tarde!');
+      }
     }
   }, []);
 
