@@ -23,6 +23,7 @@ This app version allow everyone to see all open incidents from all NGOs. All the
 Click to expand.<br>
 <img src="https://raw.githubusercontent.com/DiegoVictor/proffy-app/master/screenshots/landing.jpg" width="32%" />
 <img src="https://raw.githubusercontent.com/DiegoVictor/proffy-app/master/screenshots/give-classes.jpg" width="32%" />
+<img src="https://raw.githubusercontent.com/DiegoVictor/proffy-app/master/screenshots/search.jpg" width="32%" />
 <img src="https://raw.githubusercontent.com/DiegoVictor/proffy-app/master/screenshots/proffys.jpg" width="32%" />
 <img src="https://raw.githubusercontent.com/DiegoVictor/proffy-app/master/screenshots/favorites.jpg" width="32%" />
 
