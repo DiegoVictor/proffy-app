@@ -5,7 +5,7 @@
 [![eslint](https://img.shields.io/badge/eslint-6.8.0-4b32c3?style=flat-square&logo=eslint)](https://eslint.org/)
 [![airbnb-style](https://flat.badgen.net/badge/style-guide/airbnb/ff5a5f?icon=airbnb)](https://github.com/airbnb/javascript)
 [![expo](https://img.shields.io/badge/expo-37.0.0-000000?style=flat-square&logo=expo)](https://expo.io/)
-[![MIT License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://github.com/DiegoVictor/proffy-app/blob/master/LICENSE)
+[![MIT License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://github.com/DiegoVictor/proffy-app/blob/main/LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 This app version allow everyone to see all open incidents from all NGOs. All the resources used by this application comes from its [`API`](https://github.com/DiegoVictor/proffy-api).
@@ -22,11 +22,11 @@ This app version allow everyone to see all open incidents from all NGOs. All the
 
 # Screenshots
 Click to expand.<br>
-<img src="https://raw.githubusercontent.com/DiegoVictor/proffy-app/master/screenshots/landing.jpg" width="32%" />
-<img src="https://raw.githubusercontent.com/DiegoVictor/proffy-app/master/screenshots/give-classes.jpg" width="32%" />
-<img src="https://raw.githubusercontent.com/DiegoVictor/proffy-app/master/screenshots/search.jpg" width="32%" />
-<img src="https://raw.githubusercontent.com/DiegoVictor/proffy-app/master/screenshots/proffys.jpg" width="32%" />
-<img src="https://raw.githubusercontent.com/DiegoVictor/proffy-app/master/screenshots/favorites.jpg" width="32%" />
+<img src="https://raw.githubusercontent.com/DiegoVictor/proffy-app/main/screenshots/landing.jpg" width="32%" />
+<img src="https://raw.githubusercontent.com/DiegoVictor/proffy-app/main/screenshots/give-classes.jpg" width="32%" />
+<img src="https://raw.githubusercontent.com/DiegoVictor/proffy-app/main/screenshots/search.jpg" width="32%" />
+<img src="https://raw.githubusercontent.com/DiegoVictor/proffy-app/main/screenshots/proffys.jpg" width="32%" />
+<img src="https://raw.githubusercontent.com/DiegoVictor/proffy-app/main/screenshots/favorites.jpg" width="32%" />
 
 # Installing
 Easy peasy lemon squeezy:
