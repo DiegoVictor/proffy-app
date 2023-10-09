@@ -1,31 +1,39 @@
 import 'intl';
 import 'intl/locale-data/jsonp/pt-BR';
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { AppLoading } from 'expo';
+import React, { useEffect } from 'react';
+import * as SplashScreen from 'expo-splash-screen';
+import { useFonts } from 'expo-font';
 import {
   Archivo_400Regular,
   Archivo_700Bold,
-  useFonts,
 } from '@expo-google-fonts/archivo';
 import {
   Poppins_400Regular,
   Poppins_600SemiBold,
 } from '@expo-google-fonts/poppins';
 
-import AppStack from './src/routes/AppStack';
+import { AppStack } from './src/routes/AppStack';
 
-export default () => {
-  let [fontsLoaded] = useFonts({
+SplashScreen.preventAutoHideAsync();
+
+const App = () => {
+  const [fontsLoaded] = useFonts({
     Archivo_400Regular,
     Archivo_700Bold,
     Poppins_400Regular,
     Poppins_600SemiBold,
   });
 
-  if (!fontsLoaded) {
-    return <AppLoading />;
-  } else {
+  useEffect(() => {
+    (async () => {
+      if (fontsLoaded) {
+        await SplashScreen.hideAsync();
+      }
+    })();
+  }, [fontsLoaded]);
+
+  if (fontsLoaded) {
     return (
       <>
         <AppStack />
@@ -33,4 +41,8 @@ export default () => {
       </>
     );
   }
+
+  return null;
 };
+
+export default App;
