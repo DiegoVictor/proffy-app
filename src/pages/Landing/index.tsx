@@ -17,9 +17,13 @@ import {
   TotalConnections,
 } from './styles';
 import api from '../../services/api';
+import { StackParamList } from '../../routes/AppStack';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+
+type NavigateProps = NativeStackScreenProps<StackParamList>['navigation'];
 
 const Landing: React.FC = () => {
-  const { navigate } = useNavigation();
+  const { navigate } = useNavigation<NavigateProps>();
   const [totalConnections, setTotalConnections] = useState(0);
 
   const handleNavigationToGiveClassesPage = useCallback(() => {
