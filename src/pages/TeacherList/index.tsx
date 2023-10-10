@@ -33,41 +33,42 @@ const TeacherList: React.FC = () => {
     setIsfiltersVisible(!isFiltersVisible);
   }, [isFiltersVisible]);
 
-  const handleSubmit = useCallback(async ({ subject, week_day, time }) => {
-    try {
-      const schema = Yup.object().shape({
-        subject: Yup.string().required('Este campo é obrigatório'),
-        week_day: Yup.string().required('Este campo é obrigatório'),
-        time: Yup.string().required('Este campo é obrigatório'),
-      });
+  const handleSubmit = useCallback(
+    async ({ subject, week_day, time }: Record<string, string>) => {
+      try {
+        const schema = Yup.object().shape({
+          subject: Yup.string().required('Este campo é obrigatório'),
+          week_day: Yup.string().required('Este campo é obrigatório'),
+          time: Yup.string().required('Este campo é obrigatório'),
+        });
 
-      const data = {
-        subject: subject,
-        week_day: week_day,
-        time: time,
-      };
+        const data = {
+          subject: subject,
+          week_day: week_day,
+          time: time,
+        };
 
-      await schema.validate(data, { abortEarly: false });
+        await schema.validate(data, { abortEarly: false });
 
-      const response = await api.get<Teacher[]>('classes', {
-        params: data,
-      });
+        const response = await api.get<Teacher[]>('classes', {
+          params: data,
+        });
 
-      setTeachers(response.data);
-      setIsfiltersVisible(false);
-      loadFavorites();
-    } catch (err) {
-      console.log(err);
+        setTeachers(response.data);
+        setIsfiltersVisible(false);
+        loadFavorites();
+      } catch (err) {
+        if (err instanceof Yup.ValidationError) {
+          const errors = getValidationErrors(err);
 
-      if (err instanceof Yup.ValidationError) {
-        const errors = getValidationErrors(err);
-
-        formRef.current?.setErrors(errors);
-      } else {
-        Alert.alert('Ops! Alguma coisa deu errado, tente mais tarde!');
+          formRef.current?.setErrors(errors);
+        } else {
+          Alert.alert('Ops! Alguma coisa deu errado, tente mais tarde!');
+        }
       }
-    }
-  }, []);
+    },
+    [],
+  );
 
   const loadFavorites = useCallback(() => {
     AsyncStorage.getItem('favorites').then(response => {
