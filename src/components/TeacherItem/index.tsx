@@ -41,10 +41,14 @@ interface TeacherItemProps {
 
 const TeacherItem: React.FC<TeacherItemProps> = ({ teacher, favorited }) => {
   const [isFavorited, setIsFavorited] = useState(favorited);
-  const handleLinkToWhatsApp = useCallback(() => {
+  const handleLinkToWhatsApp = useCallback(async () => {
     try {
-      api.post('connections', { user_id: teacher.id });
-      Linking.openURL(`whatsapp://send?phone=${teacher.whatsapp}`);
+      await Promise.all([
+        api.post('connections', { user_id: teacher.id }),
+        Linking.openURL(
+          `http://api.whatsapp.com/send?phone=${teacher.whatsapp}`,
+        ),
+      ]);
     } catch (err) {
       Alert.alert('Ops! Alguma coisa deu errado, tente novamente!');
     }
