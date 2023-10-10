@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 import { Form } from '@unform/mobile';
-import { RectButton } from 'react-native-gesture-handler';
+import { TouchableOpacity } from 'react-native';
 
 export const Container = styled.View`
   background-color: #f0f0f7;
@@ -29,7 +29,7 @@ export const InputBlock = styled.View`
   width: 48%;
 `;
 
-export const SubmitButton = styled(RectButton)`
+export const SubmitButton = styled(TouchableOpacity)`
   align-items: center;
   background-color: #04d361;
   border-radius: 8px;

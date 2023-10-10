@@ -1,7 +1,8 @@
+import { TouchableOpacity, TouchableOpacityProps } from 'react-native';
+import { IStyledComponent } from 'styled-components';
 import styled from 'styled-components/native';
-import { RectButton } from 'react-native-gesture-handler';
 
-interface FavoriteButtonProps {
+interface FavoriteButtonProps extends TouchableOpacityProps {
   favorited: boolean;
 }
 
@@ -76,7 +77,10 @@ export const ButtonsContainer = styled.View`
   margin-top: 16px;
 `;
 
-export const FavoriteButton = styled(RectButton)<FavoriteButtonProps>`
+export const FavoriteButton: IStyledComponent<
+  'native',
+  FavoriteButtonProps
+> = styled(TouchableOpacity)<FavoriteButtonProps>`
   align-items: center;
   background-color: ${props => (props.favorited ? '#e33d3d' : '#8257e5')};
   border-radius: 8px;
@@ -86,7 +90,7 @@ export const FavoriteButton = styled(RectButton)<FavoriteButtonProps>`
   width: 56px;
 `;
 
-export const ContactButton = styled(RectButton)`
+export const ContactButton = styled(TouchableOpacity)`
   align-items: center;
   background-color: #04d361;
   border-radius: 8px;

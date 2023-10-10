@@ -1,6 +1,4 @@
-import React, { useCallback, ReactNode } from 'react';
-import { BorderlessButton } from 'react-native-gesture-handler';
-import { Image } from 'react-native';
+import { Image, TouchableOpacity } from 'react-native';
 
 import BackIcon from '../../assets/images/icons/back.png';
 import LogoImg from '../../assets/images/logo.png';
@@ -25,9 +23,9 @@ const PageHeader: React.FC<PageHeaderProps> = ({
   return (
     <Container>
       <TopBar>
-        <BorderlessButton onPress={handleGoBack}>
+        <TouchableOpacity onPress={handleGoBack}>
           <Image source={BackIcon} resizeMode="contain" />
-        </BorderlessButton>
+        </TouchableOpacity>
 
         <Image source={LogoImg} resizeMode="contain" />
       </TopBar>

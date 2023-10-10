@@ -1,8 +1,9 @@
 import styled from 'styled-components/native';
-import { RectButton } from 'react-native-gesture-handler';
+import { TouchableOpacity, TouchableOpacityProps } from 'react-native';
+import { IStyledComponent } from 'styled-components';
 
-interface ButtonProps {
-  color: string;
+interface ButtonProps extends TouchableOpacityProps {
+  color?: 'primary' | 'secondary';
 }
 
 export const Container = styled.View`
@@ -34,7 +35,9 @@ export const ButtonsContainer = styled.View`
   justify-content: space-between;
 `;
 
-export const Button = styled(RectButton)<ButtonProps>`
+export const Button: IStyledComponent<'native', ButtonProps> = styled(
+  TouchableOpacity,
+)<ButtonProps>`
   background-color: ${props => {
     switch (props.color) {
       case 'primary':

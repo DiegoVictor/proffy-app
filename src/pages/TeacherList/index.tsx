@@ -1,7 +1,6 @@
 import React, { useState, useCallback, useRef } from 'react';
 import { Feather } from '@expo/vector-icons';
-import { Alert } from 'react-native';
-import { BorderlessButton } from 'react-native-gesture-handler';
+import { Alert, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
@@ -88,9 +87,9 @@ const TeacherList: React.FC = () => {
       <PageHeader
         title="Proffys disponíveis"
         headerRight={
-          <BorderlessButton onPress={handleToggleFiltersVisible}>
+          <TouchableOpacity onPress={handleToggleFiltersVisible}>
             <Feather name="filter" size={20} color="#FFF" />
-          </BorderlessButton>
+          </TouchableOpacity>
         }
       >
         {isFiltersVisible && (
