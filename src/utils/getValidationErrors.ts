@@ -8,7 +8,9 @@ export const getValidationErrors = (err: ValidationError): ErrorBag => {
   const validationErrors: ErrorBag = {};
 
   err.inner.forEach(error => {
-    validationErrors[error.path] = error.message;
+    if (error.path) {
+      validationErrors[error.path] = error.message;
+    }
   });
   return validationErrors;
 };
