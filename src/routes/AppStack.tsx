@@ -2,9 +2,9 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import Landing from '../pages/Landing';
-import GiveClasses from '../pages/GiveClasses';
-import StudyTabs from './StudyTabs';
+import { Landing } from '../pages/Landing';
+import { GiveClasses } from '../pages/GiveClasses';
+import { StudyTabs } from './StudyTabs';
 
 export type StackParamList = {
   Landing: undefined;
@@ -29,4 +29,4 @@ const AppStack: React.FC = () => {
   );
 };
 
-export default AppStack;
+export { AppStack };

@@ -5,7 +5,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 import HeartOutlineIcon from '../../assets/images/icons/heart-outline.png';
 import UnfavoriteIcon from '../../assets/images/icons/unfavorite.png';
 import WhatsAppIcon from '../../assets/images/icons/whatsapp.png';
-import formatValue from '../../utils/formatValue';
+import { formatValue } from '../../utils/formatValue';
 import {
   Container,
   Profile,
@@ -121,4 +121,4 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher, favorited }) => {
   );
 };
 
-export default TeacherItem;
+export { TeacherItem };

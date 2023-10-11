@@ -6,12 +6,12 @@ import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
 import { useFocusEffect } from '@react-navigation/native';
 
-import PageHeader from '../../components/PageHeader';
-import TeacherItem from '../../components/TeacherItem';
-import Input from '../../components/Input';
+import { PageHeader } from '../../components/PageHeader';
+import { TeacherItem } from '../../components/TeacherItem';
+import { Input } from '../../components/Input';
 import api from '../../services/api';
 import { Teacher } from '../../components/TeacherItem';
-import getValidationErrors from '../../utils/getValidationErrors';
+import { getValidationErrors } from '../../utils/getValidationErrors';
 import {
   Container,
   List,
@@ -139,4 +139,4 @@ const TeacherList: React.FC = () => {
   );
 };
 
-export default TeacherList;
+export { TeacherList };

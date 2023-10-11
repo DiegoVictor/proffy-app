@@ -35,4 +35,4 @@ const GiveClasses = () => {
   );
 };
 
-export default GiveClasses;
+export { GiveClasses };
