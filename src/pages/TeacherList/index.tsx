@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useRef } from 'react';
 import { Feather } from '@expo/vector-icons';
 import { Alert, TouchableOpacity } from 'react-native';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
 import { useFocusEffect } from '@react-navigation/native';

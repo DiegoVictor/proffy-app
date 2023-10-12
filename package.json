@@ -10,11 +10,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "@expo-google-fonts/archivo": "^0.1.0",
-    "@expo-google-fonts/poppins": "^0.1.0",
-    "@react-native-community/async-storage": "~1.11.0",
-    "@react-native-community/masked-view": "0.1.10",
-    "@react-navigation/bottom-tabs": "^5.8.0",
+    "@react-native-async-storage/async-storage": "^1.19.3",
     "@react-navigation/native-stack": "^6.9.14",
     "@react-navigation/stack": "^5.9.0",
     "@unform/core": "^2.1.3",
