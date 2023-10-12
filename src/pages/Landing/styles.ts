@@ -45,9 +45,6 @@ export const Button: IStyledComponent<'native', ButtonProps> = styled(
 
       case 'secondary':
         return '#04d361';
-
-      default:
-        return '#333';
     }
   }};
   border-radius: 8px;
