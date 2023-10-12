@@ -22,7 +22,6 @@ import {
   ContactButton,
   ContactButtonText,
 } from './styles';
-import api from '../../services/api';
 
 export interface Teacher {
   id: number;

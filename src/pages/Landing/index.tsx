@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 import LandingImg from '../../assets/images/landing.png';
 import StudyIcon from '../../assets/images/icons/study.png';
@@ -18,7 +19,6 @@ import {
 } from './styles';
 import api from '../../services/api';
 import { StackParamList } from '../../routes/AppStack';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 type NavigateProps = NativeStackScreenProps<StackParamList>['navigation'];
 

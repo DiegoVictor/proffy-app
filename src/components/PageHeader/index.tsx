@@ -1,12 +1,12 @@
 import React, { useCallback, ReactNode, PropsWithChildren } from 'react';
 import { Image, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 import BackIcon from '../../assets/images/icons/back.png';
 import LogoImg from '../../assets/images/logo.png';
-import { useNavigation } from '@react-navigation/native';
-import { Container, TopBar, Header, Title } from './styles';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { StackParamList } from '../../routes/AppStack';
+import { Container, TopBar, Header, Title } from './styles';
 
 interface PageHeaderProps {
   title: string;
