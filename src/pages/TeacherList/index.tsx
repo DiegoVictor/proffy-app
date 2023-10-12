@@ -26,11 +26,12 @@ import {
 const TeacherList: React.FC = () => {
   const [teachers, setTeachers] = useState<Teacher[]>([]);
   const [favorites, setFavorites] = useState<number[]>([]);
-  const [isFiltersVisible, setIsfiltersVisible] = useState(false);
+  const [isFiltersVisible, setIsFiltersVisible] = useState(false);
+
   const formRef = useRef<FormHandles>(null);
 
   const handleToggleFiltersVisible = useCallback(() => {
-    setIsfiltersVisible(!isFiltersVisible);
+    setIsFiltersVisible(!isFiltersVisible);
   }, [isFiltersVisible]);
 
   const handleSubmit = useCallback(
@@ -55,7 +56,7 @@ const TeacherList: React.FC = () => {
         });
 
         setTeachers(response.data);
-        setIsfiltersVisible(false);
+        setIsFiltersVisible(false);
         loadFavorites();
       } catch (err) {
         if (err instanceof Yup.ValidationError) {
