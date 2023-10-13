@@ -16,7 +16,7 @@ import {
   Bio,
   Footer,
   Price,
-  PriveValue,
+  PriceValue,
   ButtonsContainer,
   FavoriteButton,
   ContactButton,
@@ -94,8 +94,7 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher, favorited }) => {
 
       <Footer>
         <Price>
-          Preço/hora {'   '}
-          <PriveValue>{formatValue(teacher.cost)}</PriveValue>
+          Preço/hora <PriceValue>{formatValue(teacher.cost)}</PriceValue>
         </Price>
 
         <ButtonsContainer>

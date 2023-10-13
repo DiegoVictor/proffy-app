@@ -66,7 +66,7 @@ export const Price = styled.Text`
   font-size: 14px;
 `;
 
-export const PriveValue = styled.Text`
+export const PriceValue = styled.Text`
   color: #8257e5;
   font-family: 'Archivo_700Bold';
   font-size: 16px;
