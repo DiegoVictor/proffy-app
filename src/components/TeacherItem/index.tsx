@@ -6,6 +6,7 @@ import HeartOutlineIcon from '../../assets/images/icons/heart-outline.png';
 import UnfavoriteIcon from '../../assets/images/icons/unfavorite.png';
 import WhatsAppIcon from '../../assets/images/icons/whatsapp.png';
 import { formatValue } from '../../utils/formatValue';
+import api from '../../services/api';
 import {
   Container,
   Profile,
