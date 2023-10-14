@@ -28,7 +28,7 @@ const PageHeader: React.FC<PropsWithChildren<PageHeaderProps>> = ({
   return (
     <Container>
       <TopBar>
-        <TouchableOpacity onPress={handleGoBack}>
+        <TouchableOpacity testID="back" onPress={handleGoBack}>
           <Image source={BackIcon} resizeMode="contain" />
         </TouchableOpacity>
 

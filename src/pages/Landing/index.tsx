@@ -51,20 +51,28 @@ const Landing: React.FC = () => {
       </Title>
 
       <ButtonsContainer>
-        <Button color="primary" onPress={handleNavigationToStudyClassesPage}>
+        <Button
+          color="primary"
+          testID="study"
+          onPress={handleNavigationToStudyClassesPage}
+        >
           <Image source={StudyIcon} />
 
           <ButtonText>Estudar</ButtonText>
         </Button>
 
-        <Button color="secondary" onPress={handleNavigationToGiveClassesPage}>
+        <Button
+          color="secondary"
+          testID="give-classes"
+          onPress={handleNavigationToGiveClassesPage}
+        >
           <Image source={GiveClassesIcon} />
 
           <ButtonText>Dar Aulas</ButtonText>
         </Button>
       </ButtonsContainer>
 
-      <TotalConnections>
+      <TotalConnections testID="connections">
         Total de {totalConnections} conexões já realizadas{' '}
         <Image source={HeartIcon} />
       </TotalConnections>

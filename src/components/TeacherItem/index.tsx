@@ -83,6 +83,7 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher, favorited }) => {
           source={{
             uri: teacher.avatar,
           }}
+          testID={`teacher-${teacher.id}-avatar`}
         />
 
         <ProfileInfo>
@@ -102,6 +103,7 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher, favorited }) => {
           <FavoriteButton
             favorited={isFavorited}
             onPress={handleToggleFavorite}
+            testID="favorite"
           >
             {isFavorited ? (
               <Image source={UnfavoriteIcon} />
@@ -110,7 +112,7 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher, favorited }) => {
             )}
           </FavoriteButton>
 
-          <ContactButton onPress={handleLinkToWhatsApp}>
+          <ContactButton testID="contact" onPress={handleLinkToWhatsApp}>
             <Image source={WhatsAppIcon} />
             <ContactButtonText>Entrar em contato</ContactButtonText>
           </ContactButton>

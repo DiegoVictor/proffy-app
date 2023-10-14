@@ -89,7 +89,10 @@ const TeacherList: React.FC = () => {
       <PageHeader
         title="Proffys disponíveis"
         headerRight={
-          <TouchableOpacity onPress={handleToggleFiltersVisible}>
+          <TouchableOpacity
+            testID="show-filters"
+            onPress={handleToggleFiltersVisible}
+          >
             <Feather name="filter" size={20} color="#FFF" />
           </TouchableOpacity>
         }
@@ -112,6 +115,7 @@ const TeacherList: React.FC = () => {
             </InputGroup>
 
             <SubmitButton
+              testID="submit"
               onPress={() => {
                 formRef.current?.submitForm();
               }}

@@ -28,7 +28,7 @@ const GiveClasses = () => {
         </Description>
       </Content>
 
-      <OkButton onPress={handleNavigateBack}>
+      <OkButton testID="back" onPress={handleNavigateBack}>
         <OkButtonText>Tudo Bem</OkButtonText>
       </OkButton>
     </Container>
