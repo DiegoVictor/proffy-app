@@ -1,10 +1,12 @@
 # [App] Proffy
-[![typescript](https://img.shields.io/badge/typescript-3.9.7-3178c6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
-[![react-native](https://img.shields.io/badge/react--native-0.61.4-61dafb?style=flat-square&logo=react)](https://reactnative.dev/)
-[![styled-components](https://img.shields.io/badge/styled_components-5.1.0-db7b86?style=flat-square&logo=styled-components)](https://styled-components.com/)
-[![eslint](https://img.shields.io/badge/eslint-6.8.0-4b32c3?style=flat-square&logo=eslint)](https://eslint.org/)
+[![AppVeyor](https://img.shields.io/appveyor/build/diegovictor/proffy-app?logo=appveyor&style=flat-square)](https://ci.appveyor.com/project/DiegoVictor/proffy-app)
+[![typescript](https://img.shields.io/badge/typescript-5.2.2-3178c6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![react-native](https://img.shields.io/badge/react--native-0.72.5-61dafb?style=flat-square&logo=react)](https://reactnative.dev/)
+[![styled-components](https://img.shields.io/badge/styled_components-6.0.8-db7b86?style=flat-square&logo=styled-components)](https://styled-components.com/)
+[![eslint](https://img.shields.io/badge/eslint-8.51.0-4b32c3?style=flat-square&logo=eslint)](https://eslint.org/)
 [![airbnb-style](https://flat.badgen.net/badge/style-guide/airbnb/ff5a5f?icon=airbnb)](https://github.com/airbnb/javascript)
-[![expo](https://img.shields.io/badge/expo-37.0.0-000000?style=flat-square&logo=expo)](https://expo.io/)
+[![expo](https://img.shields.io/badge/expo-49.0.13-000000?style=flat-square&logo=expo)](https://expo.io/)
+[![coverage](https://img.shields.io/codecov/c/gh/DiegoVictor/proffy-app?logo=codecov&style=flat-square)](https://codecov.io/gh/DiegoVictor/proffy-app)
 [![MIT License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://raw.githubusercontent.com/DiegoVictor/proffy-app/main/LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
