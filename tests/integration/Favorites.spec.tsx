@@ -31,6 +31,10 @@ const formatValue = (value: number) =>
   }).format(value);
 
 describe('Favorites Page', () => {
+  beforeEach(() => {
+    mockFlag = true;
+  });
+
   it('should be able to list favorited teachers', async () => {
     const teachers = await factory.attrsMany<Teacher>('Teacher', 3);
     await AsyncStorage.setItem('favorites', JSON.stringify(teachers));
@@ -47,5 +51,15 @@ describe('Favorites Page', () => {
       expect(getByText(`Preço/hora ${formatValue(cost)}`)).toBeTruthy();
       expect(getByTestId(`teacher-${id}-avatar`)).toBeTruthy();
     });
+  });
+
+  it('should be able to load an empty list', async () => {
+    await AsyncStorage.removeItem('favorites');
+
+    const { queryByText } = render(<Favorites />);
+
+    await waitFor(() => expect(AsyncStorage.getItem).toHaveBeenCalledTimes(1));
+
+    expect(queryByText('Entrar em contato')).toBeFalsy();
   });
 });
