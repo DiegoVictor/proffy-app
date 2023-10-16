@@ -93,8 +93,7 @@ describe('TeacherItem', () => {
   });
 
   it('should be able to favorite a teacher', async () => {
-    const [teacher, favorited] = await factory.attrsMany<Teacher>('Teacher', 2);
-    await AsyncStorage.setItem('favorites', JSON.stringify([favorited]));
+    const teacher = await factory.attrs<Teacher>('Teacher');
 
     const { getByTestId } = render(
       <TeacherItem teacher={teacher} favorited={false} />,
@@ -106,7 +105,7 @@ describe('TeacherItem', () => {
 
     expect(AsyncStorage.setItem).toHaveBeenCalledWith(
       'favorites',
-      JSON.stringify([favorited, teacher]),
+      JSON.stringify([teacher]),
     );
   });
 
