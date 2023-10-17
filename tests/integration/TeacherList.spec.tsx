@@ -43,9 +43,46 @@ const formatValue = (value: number) =>
 const apiMock = new MockAdapter(api);
 
 describe('TeacherList Page', () => {
+  beforeEach(() => {
+    mockFlag = true;
+  });
+
+  it('should be able to get a list of favorited teachers', async () => {
+    const teacher = await factory.attrs<Teacher>('Teacher');
+    await AsyncStorage.setItem('favorites', JSON.stringify([teacher]));
+
+    apiMock.onGet('classes').reply(200, [teacher]);
+
+    const { getByText, getByTestId, getByPlaceholderText } = render(
+      <TeacherList />,
+    );
+
+    await act(async () => {
+      fireEvent.press(getByTestId('show-filters'));
+    });
+
+    fireEvent.changeText(
+      getByPlaceholderText('Qual a máteria?'),
+      teacher.subject,
+    );
+    fireEvent.changeText(getByPlaceholderText('Qual o dia?'), 'Segunda');
+    fireEvent.changeText(getByPlaceholderText('Qual o horário?'), '10:00');
+
+    await act(async () => {
+      fireEvent.press(getByTestId('submit'));
+    });
+
+    await waitFor(() => getByText(teacher.name));
+
+    expect(getByText(teacher.subject)).toBeTruthy();
+    expect(getByText(teacher.bio)).toBeTruthy();
+    expect(getByText(`Preço/hora ${formatValue(teacher.cost)}`)).toBeTruthy();
+    expect(getByTestId(`teacher-${teacher.id}-avatar`)).toBeTruthy();
+  });
+
   it('should be able to get a list of teachers', async () => {
-    const [teacher, favorite] = await factory.attrsMany<Teacher>('Teacher', 2);
-    await AsyncStorage.setItem('favorites', JSON.stringify([favorite]));
+    const teacher = await factory.attrs<Teacher>('Teacher');
+    await AsyncStorage.removeItem('favorites');
 
     apiMock.onGet('classes').reply(200, [teacher]);
 
