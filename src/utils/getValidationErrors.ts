@@ -5,12 +5,12 @@ interface ErrorBag {
 }
 
 export const getValidationErrors = (err: ValidationError): ErrorBag => {
-  const validationErrors: ErrorBag = {};
-
-  err.inner.forEach(error => {
+  const validationErrors = err.inner.reduce<ErrorBag>((errorBag, error) => {
     if (error.path) {
-      validationErrors[error.path] = error.message;
+      errorBag[error.path] = error.message;
     }
-  });
+    return errorBag;
+  }, {});
+
   return validationErrors;
 };
