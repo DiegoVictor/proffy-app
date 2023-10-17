@@ -1,6 +1,6 @@
 import { fireEvent, render } from '@testing-library/react-native';
 
-import { PageHeader } from '../../src/components/PageHeader';
+import { PageHeader } from '../../../src/components/PageHeader';
 import { faker } from '@faker-js/faker';
 
 const mockNavigate = jest.fn();

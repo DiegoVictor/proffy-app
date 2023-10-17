@@ -1,10 +1,10 @@
 import { act, fireEvent, render } from '@testing-library/react-native';
 import { Linking, Alert } from 'react-native';
 
-import { factory } from '../utils/factory';
-import { Teacher, TeacherItem } from '../../src/components/TeacherItem';
+import { factory } from '../../utils/factory';
+import { Teacher, TeacherItem } from '../../../src/components/TeacherItem';
 import MockAdapter from 'axios-mock-adapter';
-import api from '../../src/services/api';
+import api from '../../../src/services/api';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 jest.mock('@react-native-async-storage/async-storage', () =>
