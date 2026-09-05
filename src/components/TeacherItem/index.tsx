@@ -1,12 +1,11 @@
 import React, { useCallback, useState } from 'react';
 import { Image, Linking, Alert } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
 import HeartOutlineIcon from '../../assets/images/icons/heart-outline.png';
 import UnfavoriteIcon from '../../assets/images/icons/unfavorite.png';
 import WhatsAppIcon from '../../assets/images/icons/whatsapp.png';
-import { formatValue } from '../../utils/formatValue';
-import api from '../../services/api';
+import { api } from '../../services/api';
+import { formatValue } from '../../helpers/formatValue';
 import {
   Container,
   Profile,
@@ -49,7 +48,7 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher, favorited }) => {
           `http://api.whatsapp.com/send?phone=${teacher.whatsapp}`,
         ),
       ]);
-    } catch (err) {
+    } catch {
       Alert.alert('Ops! Alguma coisa deu errado, tente novamente!');
     }
   }, []);
