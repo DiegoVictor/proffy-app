@@ -5,13 +5,13 @@ export const Container = styled.View`
   padding: 40px;
 `;
 
-export const TopBar = styled.View`
+export const Header = styled.View`
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
 `;
 
-export const Header = styled.View`
+export const TopBar = styled.View`
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
