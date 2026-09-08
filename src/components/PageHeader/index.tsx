@@ -1,12 +1,11 @@
-import React, { useCallback, ReactNode, PropsWithChildren } from 'react';
+import React, { ReactNode, PropsWithChildren } from 'react';
 import { Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-
+import { StackParamList } from '../..';
+import { Container, Header, TopBar, Title } from './styles';
 import BackIcon from '../../assets/images/icons/back.png';
 import LogoImg from '../../assets/images/logo.png';
-import { StackParamList } from '../../routes/AppStack';
-import { Container, TopBar, Header, Title } from './styles';
 
 interface PageHeaderProps {
   title: string;
@@ -15,15 +14,15 @@ interface PageHeaderProps {
 
 type NavigateProps = NativeStackScreenProps<StackParamList>['navigation'];
 
-const PageHeader: React.FC<PropsWithChildren<PageHeaderProps>> = ({
+export const PageHeader: React.FC<PropsWithChildren<PageHeaderProps>> = ({
   title,
   headerRight,
   children,
 }) => {
   const { navigate } = useNavigation<NavigateProps>();
-  const handleGoBack = useCallback(() => {
+  const handleGoBack = () => {
     navigate('Landing');
-  }, []);
+  };
 
   return (
     <Container>
@@ -45,5 +44,3 @@ const PageHeader: React.FC<PropsWithChildren<PageHeaderProps>> = ({
     </Container>
   );
 };
-
-export { PageHeader };
