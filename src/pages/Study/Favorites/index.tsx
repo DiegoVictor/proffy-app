@@ -1,22 +1,20 @@
-import React, { useCallback, useState } from 'react';
+import React, { useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from '@react-navigation/native';
-
-import { PageHeader } from '../../components/PageHeader';
-import { TeacherItem, Teacher } from '../../components/TeacherItem';
+import { PageHeader } from '../../../components/PageHeader';
+import { TeacherItem, Teacher } from '../../../components/TeacherItem';
 import { Container, List } from './styles';
 
 const Favorites: React.FC = () => {
   const [favorites, setFavorites] = useState<Teacher[]>([]);
 
-  const loadFavorites = useCallback(() => {
-    AsyncStorage.getItem('favorites').then(response => {
-      if (response) {
-        const favorited = JSON.parse(response);
-        setFavorites(favorited);
-      }
-    });
-  }, []);
+  const loadFavorites = async () => {
+    const favorites = await AsyncStorage.getItem('favorites');
+    if (favorites) {
+      const favorited = JSON.parse(favorites);
+      setFavorites(favorited);
+    }
+  };
 
   useFocusEffect(() => {
     loadFavorites();
