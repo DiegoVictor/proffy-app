@@ -1,6 +1,5 @@
 import { ValidationError } from 'yup';
-
-import { getValidationErrors } from '../../../src/utils/getValidationErrors';
+import { getValidationErrors } from '../../src/helpers/getValidationErrors';
 
 describe('getValidationErrors', () => {
   it('should be able to return validation errors', () => {
