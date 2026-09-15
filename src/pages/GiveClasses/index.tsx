@@ -1,6 +1,4 @@
-import React, { useCallback } from 'react';
 import { useNavigation } from '@react-navigation/native';
-
 import GiveClassesBgImg from '../../assets/images/give-classes-background.png';
 import {
   Container,
@@ -11,12 +9,12 @@ import {
   OkButtonText,
 } from './styles';
 
-const GiveClasses = () => {
+export const GiveClasses = () => {
   const { goBack } = useNavigation();
 
-  const handleNavigateBack = useCallback(() => {
+  const handleNavigateBack = () => {
     goBack();
-  }, []);
+  };
 
   return (
     <Container>
@@ -34,5 +32,3 @@ const GiveClasses = () => {
     </Container>
   );
 };
-
-export { GiveClasses };
