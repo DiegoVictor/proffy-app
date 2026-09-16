@@ -1,8 +1,7 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-
 import LandingImg from '../../assets/images/landing.png';
 import StudyIcon from '../../assets/images/icons/study.png';
 import HeartIcon from '../../assets/images/icons/heart.png';
@@ -17,22 +16,22 @@ import {
   ButtonText,
   TotalConnections,
 } from './styles';
-import api from '../../services/api';
-import { StackParamList } from '../../routes/AppStack';
+import { api } from '../../services/api';
+import { StackParamList } from '../..';
 
 type NavigateProps = NativeStackScreenProps<StackParamList>['navigation'];
 
-const Landing: React.FC = () => {
+export const Landing: React.FC = () => {
   const { navigate } = useNavigation<NavigateProps>();
   const [totalConnections, setTotalConnections] = useState(0);
 
-  const handleNavigationToGiveClassesPage = useCallback(() => {
+  const handleNavigationToGiveClassesPage = () => {
     navigate('GiveClasses');
-  }, [navigate]);
+  };
 
-  const handleNavigationToStudyClassesPage = useCallback(() => {
+  const handleNavigationToStudyClassesPage = () => {
     navigate('Study');
-  }, []);
+  };
 
   useEffect(() => {
     (async () => {
@@ -79,5 +78,3 @@ const Landing: React.FC = () => {
     </Container>
   );
 };
-
-export { Landing };

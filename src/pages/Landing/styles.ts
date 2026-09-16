@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
-import { TouchableOpacity, TouchableOpacityProps } from 'react-native';
 import { IStyledComponent } from 'styled-components';
+import { TouchableOpacity, TouchableOpacityProps } from 'react-native';
 
 interface ButtonProps extends TouchableOpacityProps {
   color?: 'primary' | 'secondary';
