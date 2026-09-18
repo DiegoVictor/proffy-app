@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import { Form } from '@unform/mobile';
 import { TouchableOpacity } from 'react-native';
 
 export const Container = styled.View`
@@ -11,7 +10,7 @@ export const List = styled.ScrollView`
   margin-top: -40px;
 `;
 
-export const SearchForm = styled(Form)`
+export const SearchForm = styled.View`
   margin-bottom: 24px;
 `;
 
