@@ -1,0 +1,29 @@
+{
+  "classes": [
+    {
+      "id": 1,
+      "subject": "Matemática",
+      "week_day": "Segunda",
+      "time": "14:00",
+      "cost": 80,
+      "name": "Diego Fernandes",
+      "avatar": "https://i.pravatar.cc/150?img=12",
+      "whatsapp": "5511999999999",
+      "bio": "Professor de matemática para todos os níveis."
+    },
+    {
+      "id": 2,
+      "subject": "Português",
+      "week_day": "Quarta",
+      "time": "10:00",
+      "cost": 70,
+      "name": "Mayk Brito",
+      "avatar": "https://i.pravatar.cc/150?img=13",
+      "whatsapp": "5511988888888",
+      "bio": "Aulas de português com foco em conversação e escrita."
+    }
+  ],
+  "connections": {
+    "total": 32
+  }
+}
