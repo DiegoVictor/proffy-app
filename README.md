@@ -68,6 +68,16 @@ Start the [`API`](https://github.com/DiegoVictor/proffy-api) (see its README for
 
 > Also, maybe you need run reverse command to the API's port: `adb reverse tcp:3333 tcp:3333`
 
+Alternatively, for testing purposes, you can use the fake API provided by [`json-server`](https://github.com/typicode/json-server) and the `server.json` file shipped in this repository.
+
+To start the fake API run:
+
+```
+$ npx json-server server.json -p 3333
+```
+
+If you choose another port or host, remember to update the `EXPO_PUBLIC_API_URL` property in your `.env` file.
+
 # Usage
 
 To start the app run:
